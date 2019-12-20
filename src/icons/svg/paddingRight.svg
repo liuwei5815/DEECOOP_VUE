@@ -1,0 +1,20 @@
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" class="icon">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_2" y2="201" x2="207.5" y1="154" x1="88.5" fill-opacity="null" stroke-opacity="null" stroke-width="null" stroke="null" fill="none"/>
+  <line stroke="null" stroke-linecap="null" stroke-linejoin="null" id="svg_3" y2="153" x2="292.499999" y1="203" x1="159.5" fill-opacity="null" stroke-opacity="null" stroke-width="null" fill="none"/>
+  <rect id="svg_9" height="85" width="1024" y="0" x="0" stroke-opacity="null" stroke-width="null" stroke="null" fill=""/>
+  <rect id="svg_10" height="85" width="425" y="169" x="301" stroke-opacity="null" stroke-width="null" stroke="null" fill=""/>
+  <rect id="svg_11" height="425" width="85" y="300" x="170" stroke-opacity="null" stroke-width="null" stroke="null" fill=""/>
+  <rect id="svg_12" height="425" width="85" y="300" x="770" stroke-opacity="null" stroke-width="null" stroke="null" fill="#bf5f00"/>
+  <rect id="svg_13" height="85" width="425" y="770" x="300" stroke-opacity="null" stroke-width="null" stroke="null" fill=""/>
+  <rect id="svg_15" height="85" width="1024" y="939" x="0" stroke-opacity="null" stroke-width="null" stroke="null" fill=""/>
+  <rect id="svg_16" height="855" width="85" y="85" x="0" fill-opacity="null" stroke-opacity="null" stroke-width="null" stroke="null" fill=""/>
+  <rect id="svg_17" height="855" width="85" y="85" x="939" fill-opacity="null" stroke-opacity="null" stroke-width="null" stroke="null" fill="#bf5f00"/>
+ </g>
+</svg>

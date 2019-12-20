@@ -1,0 +1,256 @@
+.el-dialog__header {
+    padding: 5px 10px 5px 10px;
+    background-color: #409EFF;
+}
+
+.el-dialog__headerbtn {
+    top: 10px;
+    .el-dialog__close {
+        color: #FFFFFF;
+    }
+    .el-dialog__close:hover {
+        color: #E4E4E4;
+    }
+}
+.el-dialog__body {
+    padding: 0;
+}
+
+.el-dialog__footer {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.el-dialog__title {
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content {
+    background-color: #BFDFFF;
+}
+
+.el-button {
+    padding: 10px 20px;
+}
+
+.form-inline .el-form-item {
+    margin-bottom: 0;
+}
+
+.form-inline .el-form-item__content {
+  width: 60%;
+}
+
+.btnBox .btns {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  height: 30px;
+  width: 60px;
+}
+
+.myButtons {
+  position: relative;
+  padding-left: 30px !important;
+  >svg {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+.iconRight {
+  position: relative;
+  padding-right: 30px !important;
+  >svg {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+
+.showLine:before {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  content: '';
+  height: 1px;
+  background-color: #D7D7D7;
+}
+
+.addContent {
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.autoWidthClass {
+  >.cell {
+    overflow: visible;
+  }
+}
+
+.resetElStepStyle {
+  display: flex;
+
+  .el-steps--simple {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    .el-step {
+      padding:0 14px 0 0;
+      //margin-right: 8px !important;
+    }
+    .el-step__head {
+      display: none !important;
+    }
+    .el-step__main {
+      white-space: nowrap;
+    }
+    .el-step__title {
+      font-size: 14px;
+      line-height: 22px;
+      max-width: none !important;
+    }
+    .el-step__arrow::after {
+      transform: rotate(45deg) translateY(0) translateX(3px);
+      height: 10px;
+      width: 2px;
+
+    }
+    .el-step__arrow::before {
+      transform: rotate(-45deg) translateY(0) translateX(3px);
+      height: 10px;
+      width: 2px;
+    }
+  }
+}
+.el-table__expanded-cell {
+  background-color: #fbfdff;
+  box-shadow: inset 0 2px 0 #f4f4f4 !important;
+
+}
+
+.resetContent {
+  max-height: 45px;
+  line-height: 22px;
+  overflow: hidden;
+  position: relative;
+  &.ellipsis {
+    &:after {
+      content: '...';
+      font-weight: bold;
+      position: absolute;
+      top: 22px;
+      right: -2px;
+    }
+  }
+}
+
+.reDialogFooter {
+  height: 61px !important;
+  padding: 12px 0 !important;
+}
+.reDialogBody {
+  padding-top: 0 !important;
+  .el-form {
+    margin: 0 auto !important;
+  }
+}
+.listDeliverClass {
+  height: calc(100% - 10vh);
+  .el-dialog__body {
+    height: calc(100% - 34px);
+  }
+}
+
+.sortable-ghost{
+  opacity: .8;
+  color: #fff!important;
+  background: #ecf5ff!important;
+}
+
+.resetMsgBoxStyle {
+  width: auto;
+  .el-message-box__content {
+    padding: 10px 30px;
+  }
+  img{
+    vertical-align: top !important;
+    font-size: 0 !important;
+  }
+}
+
+.resetTransferStyle {
+  .el-transfer-panel__body {
+    height: 230px !important;
+    .el-transfer-panel__list {
+      height: 100%;
+    }
+  }
+}
+
+.myCoustomTable {
+  .customTableClass {
+    display: block !important;
+    padding: 0 !important;
+    line-height: normal !important;
+    position: absolute;
+    top: 0;
+    right: 2px;
+    width: 15px;
+    height: 15px;
+    div {
+      display: block !important;
+      padding: 2px !important;
+      line-height: normal !important;
+      .svg-icon {
+        width: 100%;
+        height: 100%;
+        vertical-align: inherit;
+      }
+    }
+  }
+}
+
+.resetFormulaRadioInputStyle {
+  .el-input-number {
+    width: 80px;
+    .el-input-number__decrease {
+      width: 24px;
+    }
+  }
+}
+
+.resetFormulaRadioStyle {
+  .el-radio__label {
+    padding-left: 5px;
+  }
+}
+
+.paddingB10 {
+  padding-bottom: 10px !important;
+}
+.paddingB20 {
+  padding-bottom: 20px!important;
+}
+.paddingB30 {
+  padding-bottom: 30px!important;
+}
+.paddingT10 {
+  padding-top: 10px!important;
+}
+.paddingT20 {
+  padding-top: 20px!important;
+}
+.paddingT30 {
+  padding-top: 30px!important;
+}
+
+
+

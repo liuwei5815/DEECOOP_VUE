@@ -1,0 +1,17 @@
+Springboot整合一之Springboot整合RabbitMQ
+https://blog.csdn.net/zhuzhezhuzhe1/article/details/80454956
+
+SpringBoot整合RabbitMQ消息队列-学习笔记
+https://blog.csdn.net/kevinmcy/article/details/82221297
+
+Spring Boot整合RabbitMQ详细教程
+https://blog.csdn.net/qq_38455201/article/details/80308771
+=====================================================================================================
+
+https://blog.csdn.net/linsongbin1/article/details/80178122
+Springboot+rabbitmq实现延时队列的两种方式
+https://blog.csdn.net/zhangyuxuan2/article/details/82986802
+
+
+https://blog.csdn.net/u014308482/article/details/53036770
+https://blog.csdn.net/eumenides_/article/details/86027185

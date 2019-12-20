@@ -1,0 +1,186 @@
+
+cd /usr/local/nginx/sbin
+./nginx
+/usr/local/nginx/sbin/nginx
+
+sudo supervisord -c /etc/supervisord.conf
+
+systemctl stop firewalld
+
+======================================================================================================================================
+/bin/systemctl start rabbitmq-server.service
+/bin/systemctl stop rabbitmq-server.service
+/bin/systemctl status rabbitmq-server.service
+/bin/systemctl restart rabbitmq-server.service
+
+
+//常用的rabbitmq的命令
+service rabbitmq-server   start
+service rabbitmq-server   stop
+service rabbitmq-server   status
+service rabbitmq-server   rotate-logs|
+service rabbitmq-server   restart
+service rabbitmq-server   condrestart
+service rabbitmq-server   try-restart
+service rabbitmq-server   reload
+service rabbitmq-server   force-reload
+
+ps -ef | grep rabbitmq  查看rabbitMq进程
+
+netstat -anplt | grep LISTEN  rabbitmq默认监听端口15672/5672
+
+
+
+远程服务器重启
+./usr/local/nginx/sbin/nginx
+service mysqld start
+systemctl stop firewalld
+service rabbitmq-server start
+./opt/redis-3.2.8/bin/redis-server /opt/redis-3.2.8/etc/redis.conf
+sudo supervisord -c /etc/supervisord.conf
+sh /home/vmes/sbin/start.sh
+
+后台代码发布
+sh /home/vmes/sbin/start.sh
+
+前端代码打包命令
+npm run build --pro
+npm run build --ouhaiglasses
+
+前端代码发布命令
+sh /home/vmes/sbin/webcode.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+call clear_company("**************");
+企业信息删除脚本
+DROP PROCEDURE IF EXISTS clear_company;
+CREATE PROCEDURE clear_company(IN companyId varchar(32))
+BEGIN
+	DELETE FROM vmes_attachment WHERE company_id = companyId;
+
+	DELETE FROM vmes_bom_tree WHERE bom_id in (select id from vmes_bom where company_id = companyId);
+	DELETE FROM vmes_bom WHERE company_id = companyId;
+
+	DELETE FROM vmes_coderule WHERE company_id = companyId;
+
+	DELETE FROM vmes_sale_unit_price WHERE customer_id in (select id from vmes_customer where company_id = companyId);
+	DELETE FROM vmes_sale_receive_record WHERE customer_id in (select id from vmes_customer where company_id = companyId);
+	DELETE FROM vmes_purchase_payment_build WHERE supplier_id in (select id from vmes_customer where company_id = companyId);
+	DELETE FROM vmes_purchase_payment_history WHERE supplier_id in (select id from vmes_customer where company_id = companyId);
+	DELETE FROM vmes_customer_address WHERE customer_id in (select id from vmes_customer where company_id = companyId);
+	DELETE FROM vmes_customer_invoice WHERE customer_id in (select id from vmes_customer where company_id = companyId);
+	DELETE FROM vmes_customer WHERE company_id = companyId;
+
+	DELETE FROM vmes_department WHERE id_1 = companyId;
+
+	DELETE FROM vmes_dictionary WHERE company_id = companyId;
+
+	DELETE FROM vmes_employ_post WHERE employ_id in (select id from vmes_employee where company_id = companyId);
+	DELETE FROM vmes_employee WHERE company_id = companyId;
+
+
+	DELETE FROM vmes_equipment WHERE company_id = companyId;
+	DELETE FROM vmes_equipment_maintainTask_detail WHERE task_id in (select id from vmes_equipment_maintainTask where maintain_id in (select id from vmes_equipment_maintain where company_id = companyId));
+	DELETE FROM vmes_equipment_maintainTask WHERE maintain_id in (select id from vmes_equipment_maintain where company_id = companyId);
+	DELETE FROM vmes_equipment_maintain WHERE company_id = companyId;
+	DELETE FROM vmes_equipment_maintain_content WHERE company_id = companyId;
+	DELETE FROM vmes_equipment_maintain_plan WHERE company_id = companyId;
+	DELETE FROM vmes_equipment_repairTask_detail WHERE task_id in (select id from vmes_equipment_repairTask where repair_id in (select id from vmes_equipment_repair where company_id = companyId));
+	DELETE FROM vmes_equipment_repairTask WHERE repair_id in (select id from vmes_equipment_repair where company_id = companyId);
+	DELETE FROM vmes_equipment_repair WHERE company_id = companyId;
+	DELETE FROM vmes_equipment_sensor WHERE company_id = companyId;
+
+	DELETE FROM vmes_loginfo WHERE company_id = companyId;
+	DELETE FROM vmes_message WHERE company_id = companyId;
+	DELETE FROM vmes_post WHERE company_id = companyId;
+
+	DELETE FROM vmes_product_property WHERE prod_id in (select id from vmes_product where company_id = companyId);
+	DELETE FROM vmes_product_unit WHERE product_id in (select id from vmes_product where company_id = companyId);
+	DELETE FROM vmes_product_unit_price WHERE product_id in (select id from vmes_product where company_id = companyId);
+	DELETE FROM vmes_product WHERE company_id = companyId;
+
+	DELETE FROM vmes_purchase_company_period WHERE company_id = companyId;
+	DELETE FROM vmes_purchase_order_detail WHERE parent_id in (select id from vmes_purchase_order where company_id = companyId);
+	DELETE FROM vmes_purchase_order WHERE company_id = companyId;
+	DELETE FROM vmes_purchase_payment_detail WHERE parent_id in (select id from vmes_purchase_payment where company_id = companyId);
+	DELETE FROM vmes_purchase_payment WHERE company_id = companyId;
+	DELETE FROM vmes_purchase_payment_record WHERE company_id = companyId;
+	DELETE FROM vmes_purchase_plan_detail WHERE parent_id in (select id from vmes_purchase_plan where company_id = companyId);
+	DELETE FROM vmes_purchase_plan WHERE company_id = companyId;
+	DELETE FROM vmes_purchase_retreat_detail WHERE parent_id in (select id from vmes_purchase_retreat where company_id = companyId);
+	DELETE FROM vmes_purchase_retreat WHERE company_id = companyId;
+	DELETE FROM vmes_purchase_sign_detail WHERE parent_id in (select id from vmes_purchase_sign where company_id = companyId);
+	DELETE FROM vmes_purchase_sign WHERE company_id = companyId;
+
+	DELETE FROM vmes_role_button WHERE role_id in (select id from vmes_role where company_id = companyId);
+	DELETE FROM vmes_role_menu WHERE role_id in (select id from vmes_role where company_id = companyId);
+	DELETE FROM vmes_role WHERE company_id = companyId;
+
+	DELETE FROM vmes_sale_deliver_detail WHERE parent_id in (select id from vmes_sale_deliver where company_id = companyId);
+	DELETE FROM vmes_sale_deliver WHERE company_id = companyId;
+	DELETE FROM vmes_sale_invoice_detail WHERE parent_id in (select id from vmes_sale_invoice where company_id = companyId);
+	DELETE FROM vmes_sale_invoice WHERE company_id = companyId;
+	DELETE FROM vmes_sale_lock_date WHERE company_id = companyId;
+	DELETE FROM vmes_sale_order_detail WHERE parent_id in (select id from vmes_sale_order where company_id = companyId);
+	DELETE FROM vmes_sale_order WHERE company_id = companyId;
+  DELETE FROM vmes_sale_order_detail_change WHERE parent_id in (select id from vmes_sale_order_change where company_id = companyId);
+  DELETE FROM vmes_sale_order_change WHERE company_id = companyId;
+	DELETE FROM vmes_sale_receive_detail WHERE parent_id in (select id from vmes_sale_receive where company_id = companyId);
+	DELETE FROM vmes_sale_receive WHERE company_id = companyId;
+	DELETE FROM vmes_sale_retreat_detail WHERE parent_id in (select id from vmes_sale_retreat where company_id = companyId);
+	DELETE FROM vmes_sale_retreat WHERE company_id = companyId;
+
+	DELETE FROM vmes_finance_period WHERE company_id = companyId;
+	DELETE FROM vmes_finance_bill WHERE company_id = companyId;
+	DELETE FROM vmes_finance_base WHERE company_id = companyId;
+
+
+	DELETE FROM vmes_sensor_source WHERE company_id = companyId;
+	DELETE FROM vmes_sensor_source_history WHERE company_id = companyId;
+	DELETE FROM vmes_task WHERE company_id = companyId;
+	DELETE FROM vmes_user_defined_menu WHERE user_id in (select id from vmes_user where company_id = companyId);
+	DELETE FROM vmes_user_role WHERE user_id in (select id from vmes_user where company_id = companyId);
+	DELETE FROM vmes_user WHERE company_id = companyId;
+
+
+	DELETE FROM vmes_warehouse WHERE company_id = companyId;
+	DELETE FROM vmes_warehouse_check_execute WHERE detail_id in (select id from vmes_warehouse_check_detail where parent_id in (select id from vmes_warehouse_check where company_id = companyId));
+	DELETE FROM vmes_warehouse_check_executor WHERE detail_id in (select id from vmes_warehouse_check_detail where parent_id in (select id from vmes_warehouse_check where company_id = companyId));
+	DELETE FROM vmes_warehouse_check_detail WHERE parent_id in (select id from vmes_warehouse_check where company_id = companyId);
+	DELETE FROM vmes_warehouse_check WHERE company_id = companyId;
+
+	DELETE FROM vmes_warehouse_in_execute WHERE detail_id in (select id from vmes_warehouse_in_detail where parent_id in (select id from vmes_warehouse_in where company_id = companyId));
+	DELETE FROM vmes_warehouse_in_executor WHERE detail_id in (select id from vmes_warehouse_in_detail where parent_id in (select id from vmes_warehouse_in where company_id = companyId));
+	DELETE FROM vmes_warehouse_in_detail WHERE parent_id in (select id from vmes_warehouse_in where company_id = companyId);
+	DELETE FROM vmes_warehouse_in WHERE company_id = companyId;
+
+	DELETE FROM vmes_warehouse_initial WHERE company_id = companyId;
+	DELETE FROM vmes_warehouse_loginfo WHERE company_id = companyId;
+
+	DELETE FROM vmes_warehouse_move_execute WHERE detail_id in (select id from vmes_warehouse_move_detail where parent_id in (select id from vmes_warehouse_move where company_id = companyId));
+	DELETE FROM vmes_warehouse_move_executor WHERE detail_id in (select id from vmes_warehouse_move_detail where parent_id in (select id from vmes_warehouse_move where company_id = companyId));
+	DELETE FROM vmes_warehouse_move_detail WHERE parent_id in (select id from vmes_warehouse_move where company_id = companyId);
+	DELETE FROM vmes_warehouse_move WHERE company_id = companyId;
+
+  DELETE FROM vmes_warehouse_out_execute WHERE detail_id in (select id from vmes_warehouse_out_detail where parent_id in (select id from vmes_warehouse_out where company_id = companyId));
+  DELETE FROM vmes_warehouse_out_executor WHERE detail_id in (select id from vmes_warehouse_out_detail where parent_id in (select id from vmes_warehouse_out where company_id = companyId));
+  DELETE FROM vmes_warehouse_out_recommend WHERE detail_id in (select id from vmes_warehouse_out_detail where parent_id in (select id from vmes_warehouse_out where company_id = companyId));
+	DELETE FROM vmes_warehouse_out_detail WHERE parent_id in (select id from vmes_warehouse_out where company_id = companyId);
+	DELETE FROM vmes_warehouse_out WHERE company_id = companyId;
+
+	DELETE FROM vmes_warehouse_product WHERE company_id = companyId;
+
+
+END;
