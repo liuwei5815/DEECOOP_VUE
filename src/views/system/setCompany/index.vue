@@ -45,7 +45,7 @@
   import {initMenuButtons} from '@/api/button'
 
   import {findSystemDateTime} from '@/api/system'
-  import {findPaymentPeriodByCompanyId} from '@/api/purchaseCompanyPeriod'
+
 
   export default {
     //子组件
